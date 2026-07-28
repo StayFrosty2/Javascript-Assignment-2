@@ -2,7 +2,23 @@
 const footer = document.querySelector("footer");
 const imageDiv = document.querySelector("#image");
 const descDiv = document.querySelector("#desc");
+
+// Form element references
 const form = document.querySelector("form");
+const size = document.getElementById('size');
+const crust = document.getElementById('crust');
+const sauce = document.getElementById('sauce');
+const cheese = document.getElementById('cheese');
+const pepperoni = document.getElementById('pepperoni');
+const greenolives = document.getElementById('greenolives');
+const blackolives = document.getElementById('blackolives');
+const sausage = document.getElementById('sausage');
+const bacon = document.getElementById('bacon');
+const mushroom = document.getElementById('mushroom');
+const pineapple = document.getElementById('pineapple');
+const chicken = document.getElementById('chicken');
+const greenpeppers = document.getElementById('greenpeppers');
+const steak = document.getElementById('steak');
 
 // Function to dynamically add my name and student id to the document
 function createFooter() {
@@ -122,7 +138,101 @@ class Pizza {
 
         imageDiv.appendChild(img);
     }
+
+    describePizza() {
+        let desc = document.createElement("p");
+        let toppingList = document.createElement("ul");
+        let pizzaSize;
+        let pizzaCrust;
+        let pizzaSauce;
+        let pizzaCheese;
+
+        switch (this.size) {
+            case "s":
+                pizzaSize = "Small";
+                break;
+            case "m":
+                pizzaSize = "Medium";
+                break;
+            case "l":
+                pizzaSize = "Large";
+                break;
+            default:
+                pizzaSize = "Unknown";
+                break;
+        }
+
+        switch (this.crust) {
+            case "thin":
+                pizzaCrust = "thin";
+                break;
+            case "thick":
+                pizzaCrust = "thick";
+                break;
+            case "stuffed":
+                pizzaCrust = "stuffed";
+                break;
+            default:
+                pizzaCrust = "unknown";
+                break;
+        }
+
+        switch (this.sauce) {
+            case "na":
+                pizzaSauce = "no";
+                break;
+            case "reg":
+                pizzaSauce = "regular tomato";
+                break;
+            case "gah":
+                pizzaSauce = "garlic and herb";
+                break;
+            case "pes":
+                pizzaSauce = "green pesto";
+                break;
+            case "bbq":
+                pizzaSauce = "barbecue";
+                break;
+            default:
+                pizzaSauce = "unknown";
+                break;
+        }
+
+        switch (this.cheese) {
+            case "na":
+                pizzaCheese = "no";
+                break;
+            case "mozza":
+                pizzaCheese = "mozzarella";
+                break;
+            case "provo":
+                pizzaCheese = "provolone";
+                break;
+            case "ched":
+                pizzaCheese = "Canadian chedder";
+                break;
+            default:
+                pizzaCheese = "unknown";
+                break;
+        }
+
+        this.toppings.forEach((topping) => {
+            let ingrediant = document.createElement("li");
+            ingrediant.textContent = `${topping}`;
+            toppingList.appendChild(ingrediant);
+        });
+
+        desc.textContent = `${pizzaSize} sized pizza, ${pizzaCrust} crust, ${pizzaSauce} sauce, ${pizzaCheese} cheese, and the following toppings:`;
+
+        descDiv.appendChild(desc);
+        descDiv.appendChild(toppingList);
+    }
 }
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    console.log(event);
+});
 
 // All of this was accidental, but I thought I would leave it in since it's not a bad idea
 

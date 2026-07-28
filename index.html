@@ -16,9 +16,88 @@
         </header>
         <section>
             <form id="order" action="order.html" method="get">
-                <div id="image">
-                    
-                </div>
+                <h3>Special Free Woodfired Pizza Deal</h3>
+                <p>Congratulations on winning our raffle! Please select whatever options you would like:</p>
+                <select name="size" id="size">
+                    <optgroup label="Size">
+                        <option value="s">Small</option>
+                        <option value="m">Medium</option>
+                        <option value="l">Large</option>
+                    </optgroup>
+                </select>
+                <select name="crust" id="crust">
+                    <optgroup label="Crust">
+                        <option value="thin">Thin Crust</option>
+                        <option value="thick">Thick Crust</option>
+                        <option value="stuffed">Mozzarella Stuffed Crust</option>
+                    </optgroup>
+                </select>
+                <select name="sauce" id="sauce">
+                    <optgroup label="Sauce">
+                        <option value="na">None</option>
+                        <option value="reg">Regular Tomato Sauce</option>
+                        <option value="gah">Garlic and Herb White Sauce</option>
+                        <option value="pes">Specialty Green Pesto</option>
+                        <option value="bbq">Sweet Baby Ray's Barbecue Sauce</option>
+                    </optgroup>
+                </select>
+                <select name="cheese" id="cheese">
+                    <optgroup label="Cheese">
+                        <option value="none">None</option>
+                        <option value="mozza">Classic Mozzarella</option>
+                        <option value="provo">Sargento Provolone</option>
+                        <option value="marble">Black Diamond Canadian Cheddar</option>
+                    </optgroup>
+                </select>
+                <fieldset>
+                    <p>Toppings:</p>
+                    <div>
+                        <label for="pepperoni">Pepperoni</label>
+                        <input type="checkbox" id="pepperoni" name="pepperoni" value="pepperoni" />
+                    </div>
+                    <div>
+                        <label for="greenolives">Green Olives</label>
+                        <input type="checkbox" id="greenolives" name="greenolives" value="greenolives" />
+                    </div>
+                    <div>
+                        <label for="blackolives">Black Olives</label>
+                        <input type="checkbox" id="blackolives" name="blackolives" value="blackolives" />
+                    </div>
+                    <div>
+                        <label for="sausage">Sausage</label>
+                        <input type="checkbox" id="sausage" name="sausage" value="sausage" />
+                    </div>
+                    <div>
+                        <label for="bacon">Bacon</label>
+                        <input type="checkbox" id="bacon" name="bacon" value="bacon" />
+                    </div>
+                    <div>
+                        <label for="mushroom">Mushroom</label>
+                        <input type="checkbox" id="mushroom" name="mushroom" value="mushroom" />
+                    </div>
+                    <div>
+                        <label for="pineapple">Pineapple</label>
+                        <input type="checkbox" id="pineapple" name="pineapple" value="pineapple" />
+                    </div>
+                    <div>
+                        <label for="chicken">Chicken</label>
+                        <input type="checkbox" id="chicken" name="chicken" value="chicken" />
+                    </div>
+                    <div>
+                        <label for="onion">Onion</label>
+                        <input type="checkbox" id="onion" name="onion" value="onion" />
+                    </div>
+                    <div>
+                        <label for="greenpeppers">Green Peppers</label>
+                        <input type="checkbox" id="greenpeppers" name="greenpeppers" value="greenpeppers" />
+                    </div>
+                    <div>
+                        <label for="steak">Shredded Steak</label>
+                        <input type="checkbox" id="steak" name="steak" value="steak" />
+                    </div>
+                </fieldset>
+                <button type="submit">Submit</button>
+                <button type="reset">Clear</button>
             </form>
         </section>
         <footer>

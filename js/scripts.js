@@ -33,13 +33,16 @@ function createFooter() {
 // Run function
 createFooter();
 
+// Object
 class Pizza {
+    // Object Variables
     size;
     crust;
     sauce;
     cheese;
     toppings;
 
+    // Constructor
     constructor(size, crust, sauce, cheese, toppings) {
         this.size = size;
         this.crust = crust;
@@ -48,10 +51,13 @@ class Pizza {
         this.toppings = toppings;
     }
 
+    // Method generates the image for the pizza and displays it
     generatePizza() {
+        // Create the element, initialize the link to the img
         let img = document.createElement("img");
         let url = "img/cheese-pizza.svg";
 
+        // change the image size depending on the size of the pizza
         switch (this.size) {
             case "s":
                 img.height = 150;
@@ -71,6 +77,7 @@ class Pizza {
                 break;
         }
 
+        // change the border of the image based on the crust choice
         switch (this.crust) {
             case "thin":
                 img.style.border = "2px dashed brown";
@@ -86,6 +93,7 @@ class Pizza {
                 break;
         }
 
+        // change the image's background color based on the user's sauce choice
         switch (this.sauce) {
             case "na":
                 img.style.backgroundColor = "none";
@@ -108,6 +116,7 @@ class Pizza {
                 break;
         }
 
+        // only changes the image to hawaiian if the user chooses provolone cheese
         switch (this.cheese) {
             case "na":
                 break;
@@ -122,6 +131,7 @@ class Pizza {
                 break;
         }
 
+        // changes the image itself depending on if the user chooses specific ingrediants
         this.toppings.forEach((topping) => {
             if(topping == "Pepperoni") {
                 url = "img/pepperoni-pizza.svg";
@@ -137,11 +147,14 @@ class Pizza {
             }
         });
 
+        // sets the image source and appends it to its div element on the page
         img.src = url;
         imageDiv.appendChild(img);
     }
 
+    // Method sets the description for the pizza
     describePizza() {
+        // Variables and elements
         let desc = document.createElement("p");
         let toppingList = document.createElement("ul");
         let pizzaSize;
@@ -149,6 +162,7 @@ class Pizza {
         let pizzaSauce;
         let pizzaCheese;
 
+        // Size
         switch (this.size) {
             case "s":
                 pizzaSize = "Small";
@@ -164,6 +178,7 @@ class Pizza {
                 break;
         }
 
+        // Crust
         switch (this.crust) {
             case "thin":
                 pizzaCrust = "thin";
@@ -179,6 +194,7 @@ class Pizza {
                 break;
         }
 
+        // Sauce
         switch (this.sauce) {
             case "na":
                 pizzaSauce = "no";
@@ -200,6 +216,7 @@ class Pizza {
                 break;
         }
 
+        // Cheese
         switch (this.cheese) {
             case "na":
                 pizzaCheese = "no";
@@ -218,24 +235,30 @@ class Pizza {
                 break;
         }
 
+        // Creates a list item element for each topping and appends it to the unordered list created at the start of this method
         this.toppings.forEach((topping) => {
             let ingrediant = document.createElement("li");
             ingrediant.textContent = `${topping}`;
             toppingList.appendChild(ingrediant);
         });
 
+        // Sets the description content with all appropriate vairables
         desc.textContent = `${pizzaSize} sized pizza, ${pizzaCrust} crust, ${pizzaSauce} sauce, ${pizzaCheese} cheese, and the following toppings:`;
 
+        // Appends the description and topping list to the div
         descDiv.appendChild(desc);
         descDiv.appendChild(toppingList);
     }
 }
 
+// Adds the event listener to the form, preventing the default and creating the pizza objects. writes the pizza objects to the page
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     console.log(event);
 
+    // Empty array to store all the toppings
     toppingList = [];
+
     // big if statement to add all of the toppings to a list before creating the pizza object
     if(pepperoni.checked) {
         // found this command on mdn | https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push
@@ -272,7 +295,10 @@ form.addEventListener("submit", (event) => {
         toppingList.push("Shredded Steak");
     }
 
+    // Creates the new pizza object
     let newPizza = new Pizza(size.value, crust.value, sauce.value, cheese.value, toppingList);
+
+    // Generates the image and description for the new pizza
     newPizza.generatePizza();
     newPizza.describePizza();
     console.log(newPizza);

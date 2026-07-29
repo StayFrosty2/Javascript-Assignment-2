@@ -18,37 +18,43 @@
             <form id="order" action="" method="get">
                 <h3>Special Free Woodfired Pizza Deal</h3>
                 <p>Congratulations on winning our raffle! Please select whatever options you would like:</p>
-                <select name="size" id="size">
-                    <optgroup label="Size">
-                        <option value="s">Small</option>
-                        <option value="m">Medium</option>
-                        <option value="l">Large</option>
-                    </optgroup>
-                </select>
-                <select name="crust" id="crust">
-                    <optgroup label="Crust">
-                        <option value="thin">Thin Crust</option>
-                        <option value="thick">Thick Crust</option>
-                        <option value="stuffed">Mozzarella Stuffed Crust</option>
-                    </optgroup>
-                </select>
-                <select name="sauce" id="sauce">
-                    <optgroup label="Sauce">
-                        <option value="na">None</option>
-                        <option value="reg">Regular Tomato Sauce</option>
-                        <option value="gah">Garlic and Herb White Sauce</option>
-                        <option value="pes">Specialty Green Pesto</option>
-                        <option value="bbq">Sweet Baby Ray's Barbecue Sauce</option>
-                    </optgroup>
-                </select>
-                <select name="cheese" id="cheese">
-                    <optgroup label="Cheese">
-                        <option value="na">None</option>
-                        <option value="mozza">Classic Mozzarella</option>
-                        <option value="provo">Sargento Provolone</option>
-                        <option value="ched">Black Diamond Canadian Cheddar</option>
-                    </optgroup>
-                </select>
+                <fieldset>
+                    <h4>Size</h4>
+                    <select name="size" id="size">
+                        <optgroup label="Size">
+                            <option value="s">Small</option>
+                            <option value="m">Medium</option>
+                            <option value="l">Large</option>
+                        </optgroup>
+                    </select>
+                    <h4>Crust Type</h4>
+                    <select name="crust" id="crust">
+                        <optgroup label="Crust">
+                            <option value="thin">Thin Crust</option>
+                            <option value="thick">Thick Crust</option>
+                            <option value="stuffed">Mozzarella Stuffed Crust</option>
+                        </optgroup>
+                    </select>
+                    <h4>Sauce</h4>
+                    <select name="sauce" id="sauce">
+                        <optgroup label="Sauce">
+                            <option value="na">None</option>
+                            <option value="reg">Regular Tomato Sauce</option>
+                            <option value="gah">Garlic and Herb White Sauce</option>
+                            <option value="pes">Specialty Green Pesto</option>
+                            <option value="bbq">Sweet Baby Ray's Barbecue Sauce</option>
+                        </optgroup>
+                    </select>
+                    <h4>Cheese</h4>
+                    <select name="cheese" id="cheese">
+                        <optgroup label="Cheese">
+                            <option value="na">None</option>
+                            <option value="mozza">Classic Mozzarella</option>
+                            <option value="provo">Sargento Provolone</option>
+                            <option value="ched">Black Diamond Canadian Cheddar</option>
+                        </optgroup>
+                    </select>
+                </fieldset>
                 <fieldset>
                     <p>Toppings:</p>
                     <div>

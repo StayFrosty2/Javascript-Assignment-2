@@ -17,6 +17,7 @@ const bacon = document.getElementById('bacon');
 const mushroom = document.getElementById('mushroom');
 const pineapple = document.getElementById('pineapple');
 const chicken = document.getElementById('chicken');
+const onion = document.getElementById('onion');
 const greenpeppers = document.getElementById('greenpeppers');
 const steak = document.getElementById('steak');
 
@@ -122,16 +123,16 @@ class Pizza {
         }
 
         this.toppings.forEach((topping) => {
-            if(topping == "pepperoni") {
+            if(topping == "Pepperoni") {
                 url = "img/pepperoni-pizza.svg";
             }
-            if(topping == "chicken") {
+            if(topping == "Chicken") {
                 url = "img/bbq-pizza.svg";
             }
-            if(topping == "blackolives") {
+            if(topping == "Black Olives") {
                 url = "img/pizza.svg";
             }
-            if(topping == "pineapple") {
+            if(topping == "Pineapple") {
                 url = "img/hawaiian-pizza.svg";
             }
         });
@@ -232,6 +233,47 @@ class Pizza {
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     console.log(event);
+
+    toppingList = [];
+    // big if statement to add all of the toppings to a list before creating the pizza object
+    if(pepperoni.checked) {
+        // found this command on mdn | https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push
+        toppingList.push("Pepperoni");
+    }
+    if(greenolives.checked) {
+        toppingList.push("Green Olives");
+    }
+    if(blackolives.checked) {
+        toppingList.push("Black Olives");
+    }
+    if(sausage.checked)  {
+        toppingList.push("Sausage");
+    }
+    if(bacon.checked)  {
+        toppingList.push("Bacon");
+    }
+    if(mushroom.checked)  {
+        toppingList.push("Mushroom");
+    }
+    if(pineapple.checked)  {
+        toppingList.push("Pineapple");
+    }
+    if(chicken.checked)  {
+        toppingList.push("Chicken");
+    }
+    if(onion.checked)  {
+        toppingList.push("Onion");
+    }
+    if(greenpeppers.checked)  {
+        toppingList.push("Green Peppers");
+    }
+    if(steak.checked)  {
+        toppingList.push("Shredded Steak");
+    }
+
+    let newPizza = new Pizza(size, crust, sauce, cheese, toppingList);
+    newPizza.generatePizza();
+    newPizza.describePizza();
 });
 
 // All of this was accidental, but I thought I would leave it in since it's not a bad idea

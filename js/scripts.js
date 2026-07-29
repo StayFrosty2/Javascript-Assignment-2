@@ -137,6 +137,7 @@ class Pizza {
             }
         });
 
+        img.src = url;
         imageDiv.appendChild(img);
     }
 
@@ -271,9 +272,10 @@ form.addEventListener("submit", (event) => {
         toppingList.push("Shredded Steak");
     }
 
-    let newPizza = new Pizza(size, crust, sauce, cheese, toppingList);
+    let newPizza = new Pizza(size.value, crust.value, sauce.value, cheese.value, toppingList);
     newPizza.generatePizza();
     newPizza.describePizza();
+    console.log(newPizza);
 });
 
 // All of this was accidental, but I thought I would leave it in since it's not a bad idea
